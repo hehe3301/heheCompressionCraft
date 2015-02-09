@@ -1,0 +1,16 @@
+[
+{
+  "modid": "hehecompressioncraft",
+  "name": "Compression Craft",
+  "description": "Hehe3301 Compressioncraft mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Hehe3301"],
+  "credits": "Hehe3301 and help from the orange tutorial",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
