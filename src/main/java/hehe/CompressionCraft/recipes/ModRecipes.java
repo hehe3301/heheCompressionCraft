@@ -9,6 +9,15 @@ import net.minecraft.item.ItemStack;
 public class ModRecipes {
 
 	public static void init() {
+		ItemStack chest = new ItemStack(Blocks.log);
+		GameRegistry.addRecipe(new ItemStack(Blocks.chest, 4), "xxx", "x x", "xxx", 'x', chest);
+		ItemStack chest2 = new ItemStack(Blocks.log, 1, 1 ); 
+		GameRegistry.addRecipe(new ItemStack(Blocks.chest, 4), "xxx", "x x", "xxx", 'x', chest2);
+		ItemStack chest3 = new ItemStack(Blocks.log, 1, 2 ); 
+		GameRegistry.addRecipe(new ItemStack(Blocks.chest, 4), "xxx", "x x", "xxx", 'x', chest3);
+		ItemStack chest4 = new ItemStack(Blocks.log, 1, 3 ); 
+		GameRegistry.addRecipe(new ItemStack(Blocks.chest, 4), "xxx", "x x", "xxx", 'x', chest4);
+		
 		//De-compressing cobble
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.cobblestone, 9), new ItemStack(ModBlocks.compressedCobble, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedCobble, 9, 0), new ItemStack(ModBlocks.compressedCobble, 1, 1));

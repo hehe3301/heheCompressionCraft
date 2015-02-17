@@ -22,7 +22,7 @@ public class CompressedGravel extends Block {
 	private IIcon[] icons;
 
 	public CompressedGravel() {
-		super(Material.rock);
+		super(Material.sand);
 		setHardness(1);
 		setBlockName(Constants.MODID + "_" + name);
 		setCreativeTab(ModItems.heheTweaks);

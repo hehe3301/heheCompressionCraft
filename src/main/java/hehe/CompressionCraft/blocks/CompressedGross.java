@@ -1,6 +1,6 @@
 package hehe.CompressionCraft.blocks;
 
-import hehe.CompressionCraft.items.ItemBlockCompressedSand;
+import hehe.CompressionCraft.items.ItemBlockCompressedGross;
 import hehe.CompressionCraft.items.ModItems;
 
 import java.util.List;
@@ -15,43 +15,42 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CompressedSand extends Block {
+public class CompressedGross extends Block {
 
-	private final String name = "compressedSand";
-	private final int maxMeta = 2;
+	private final String name = "compressedGross";
+	private final int maxMeta = 5;
 	private IIcon[] icons;
 
-	public CompressedSand() {
-		super(Material.sand);
+	public CompressedGross() {
+		super(Material.cloth);
 		setHardness(1);
 		setBlockName(Constants.MODID + "_" + name);
 		setCreativeTab(ModItems.heheTweaks);
 		icons = new IIcon[maxMeta];
-		GameRegistry.registerBlock(this, ItemBlockCompressedSand.class, name);
+		GameRegistry.registerBlock(this, ItemBlockCompressedGross.class, name);
 	}
 
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		for (int i = 0; i < icons.length; i++) {
-			icons[i] = iconRegister.registerIcon(Constants.MODID + ":" + name
-					+ i);
+			icons[i]=iconRegister.registerIcon(Constants.MODID + ":" + name + i);
 		}
 	}
 
 	@Override
 	public IIcon getIcon(int side, int meta) {
-		return icons[meta % maxMeta];
+		return icons[meta%maxMeta];
 	}
-
 	@Override
-	public int damageDropped(int meta) {
+	public int damageDropped(int meta){
 		return meta;
 	}
-
-	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list) {
-		for (int i = 0; i < maxMeta; i++) {
+	
+	
+	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list){
+		for(int i = 0; i <maxMeta; i++){
 			list.add(new ItemStack(item, 1, i));
 		}
 	}
-
+	
 }

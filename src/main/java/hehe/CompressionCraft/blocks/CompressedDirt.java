@@ -23,7 +23,7 @@ public class CompressedDirt extends Block {
 	private IIcon[] icons;
 
 	public CompressedDirt() {
-		super(Material.rock);
+		super(Material.grass);
 		setHardness(1);
 		setBlockName(Constants.MODID + "_" + name);
 		setCreativeTab(ModItems.heheTweaks);

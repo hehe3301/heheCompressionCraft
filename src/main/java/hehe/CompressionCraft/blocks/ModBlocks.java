@@ -9,7 +9,8 @@ public class ModBlocks {
 	public static Block compresser;
 	public static Block compressedSand;
 	public static Block compressedGravel;
-	
+	public static Block compressedStone;
+	public static Block	compressedGross;
 	
 	
 
@@ -19,6 +20,8 @@ public class ModBlocks {
 		compressedDirt =new CompressedDirt();
 		compressedSand = new CompressedSand();
 		compressedGravel = new CompressedGravel();
+		compressedStone = new CompressedStone();
+		compressedGross = new CompressedGross();
 		
 		
 		
