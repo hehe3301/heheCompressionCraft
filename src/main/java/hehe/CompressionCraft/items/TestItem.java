@@ -1,10 +1,9 @@
 package hehe.CompressionCraft.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import lib.Constants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-
+import hehe.CompressionCraft.lib.Constants;
 
 public class TestItem extends Item {
 	private final String name = "testItem";

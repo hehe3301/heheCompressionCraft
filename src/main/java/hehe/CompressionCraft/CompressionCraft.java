@@ -4,11 +4,10 @@ import hehe.CompressionCraft.blocks.ModBlocks;
 import hehe.CompressionCraft.items.ModItems;
 import hehe.CompressionCraft.proxy.CommonProxy;
 import hehe.CompressionCraft.recipes.ModRecipes;
-import lib.Constants;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
-
+import hehe.CompressionCraft.lib.Constants;
 @Mod(modid = Constants.MODID, name = Constants.MODNAME, version = Constants.VERSION)
 public class CompressionCraft {
 
