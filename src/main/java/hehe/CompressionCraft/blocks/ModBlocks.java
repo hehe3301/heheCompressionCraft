@@ -11,6 +11,7 @@ public class ModBlocks {
 	public static Block compressedGravel;
 	public static Block compressedStone;
 	public static Block	compressedGross;
+	public static Block compressedYum;
 	
 	
 
@@ -22,6 +23,7 @@ public class ModBlocks {
 		compressedGravel = new CompressedGravel();
 		compressedStone = new CompressedStone();
 		compressedGross = new CompressedGross();
+		compressedYum = new CompressedYum();
 		
 		
 		
