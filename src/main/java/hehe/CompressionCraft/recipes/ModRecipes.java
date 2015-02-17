@@ -130,23 +130,40 @@ public class ModRecipes {
 		ItemStack zFlesh = new ItemStack(Items.rotten_flesh, 9);
 		GameRegistry.addShapelessRecipe(zFlesh, new ItemStack(ModBlocks.compressedGross, 9, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGross, 0),zFlesh,zFlesh,zFlesh,zFlesh,zFlesh,zFlesh,zFlesh,zFlesh, zFlesh);
-		
+		//Raw Chicken
 		ItemStack rChicken = new ItemStack(Items.chicken, 9);
 		GameRegistry.addShapelessRecipe(rChicken, new ItemStack(ModBlocks.compressedGross, 9, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGross, 1, 1),rChicken,rChicken,rChicken,rChicken,rChicken,rChicken,rChicken,rChicken, rChicken);
-		
+		//Raw Pork
 		ItemStack rPork = new ItemStack(Items.porkchop, 9);
 		GameRegistry.addShapelessRecipe(rPork, new ItemStack(ModBlocks.compressedGross, 9, 2));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGross, 1, 2),rPork,rPork,rPork,rPork,rPork,rPork,rPork,rPork, rPork);
-		
+		//Raw Beef
 		ItemStack rBeef = new ItemStack(Items.beef, 9);
 		GameRegistry.addShapelessRecipe(rBeef, new ItemStack(ModBlocks.compressedGross, 9, 3));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGross, 1, 3),rBeef,rBeef,rBeef,rBeef,rBeef,rBeef,rBeef,rBeef, rBeef);
-		
+		//Raw Fish
 		ItemStack rfish = new ItemStack(Items.fish, 9);
 		GameRegistry.addShapelessRecipe(rfish, new ItemStack(ModBlocks.compressedGross, 9, 4));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGross, 1, 4),rfish,rfish,rfish,rfish,rfish,rfish,rfish,rfish, rfish);
 		
+		//Cooked Chicken
+		ItemStack Chicken = new ItemStack(Items.cooked_chicken, 9);
+		GameRegistry.addShapelessRecipe(Chicken, new ItemStack(ModBlocks.compressedYum, 9, 0));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 0),Chicken,Chicken,Chicken,Chicken,Chicken,Chicken,Chicken,Chicken, Chicken);
+		//Cooked Pork
+		ItemStack Pork = new ItemStack(Items.cooked_porkchop, 9);
+		GameRegistry.addShapelessRecipe(Pork, new ItemStack(ModBlocks.compressedYum, 9, 1));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 1),Pork,Pork,Pork,Pork,Pork,Pork,Pork,Pork,Pork);
+		//Cooked Beef
+		ItemStack Beef = new ItemStack(Items.cooked_beef, 9);
+		GameRegistry.addShapelessRecipe(Beef, new ItemStack(ModBlocks.compressedYum, 9, 2));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 2),Beef,Beef,Beef,Beef,Beef,Beef,Beef,Beef,Beef);
+		//Cooked Fish
+		ItemStack fish = new ItemStack(Items.cooked_fished, 9);
+		GameRegistry.addShapelessRecipe(fish, new ItemStack(ModBlocks.compressedYum, 9, 3));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 3),fish,fish,fish,fish,fish,fish,fish,fish,fish);
+				
 		
 		
 		
