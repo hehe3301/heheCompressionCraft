@@ -1,10 +1,10 @@
 [
 {
-  "modid": "hehecompressioncraft",
+  "modid": "heheCompressionCraft",
   "name": "Compression Craft",
-  "description": "Hehe3301 Compressioncraft mod",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "description": "Hehe3301 CompressionCraft mod",
+  "version": "1.2.0",
+  "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",
   "authorList": ["Hehe3301"],
