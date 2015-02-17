@@ -1,12 +1,12 @@
 package hehe.CompressionCraft.blocks;
 
+import hehe.CompressionCraft.Constants;
 import hehe.CompressionCraft.items.ItemBlockCompressedCobble;
 import hehe.CompressionCraft.items.ItemBlockCreditsBlock;
 import hehe.CompressionCraft.items.ModItems;
 
 import java.util.List;
 
-import hehe.CompressionCraft.lib.Constants;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

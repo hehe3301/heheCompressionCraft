@@ -1,4 +1,4 @@
-package hehe.CompressionCraft.lib;
+package hehe.CompressionCraft;
 
 public class Constants {
 	public static final String MODID = "heheCompressionCraft";
