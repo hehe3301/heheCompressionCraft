@@ -12,7 +12,7 @@ public class ModBlocks {
 	public static Block compressedStone;
 	public static Block compressedGross;
 	public static Block compressedYum;
-	public static Block compressedNether;
+	public static Block compressedNetherrack;
 
 	public static void init() {
 		creditsBlock = new CreditsBlock();
@@ -23,7 +23,7 @@ public class ModBlocks {
 		compressedStone = new CompressedStone();
 		compressedGross = new CompressedGross();
 		compressedYum = new CompressedYum();
-		compressedNether = new CompressedNetherrack();
+		compressedNetherrack = new CompressedNetherrack();
 
 		compresser = new Compresser();
 	}
