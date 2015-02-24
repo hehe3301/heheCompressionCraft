@@ -118,8 +118,8 @@ public class ModRecipes {
 			
 		}
 		
-		for(int i=0; i<8; i++){
-			GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedStone,1, i ), new ItemStack(ModBlocks.compressedCobble,1, i ), 0.1f);
+		for(int i=0; i<8; i++){ //adds smelting compressed cobble into compressed stone
+			GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedCobble,1, i ), new ItemStack(ModBlocks.compressedStone,1, i ), 0.1f);
 		}
 				
 	
