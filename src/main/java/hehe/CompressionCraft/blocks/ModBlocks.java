@@ -10,25 +10,21 @@ public class ModBlocks {
 	public static Block compressedSand;
 	public static Block compressedGravel;
 	public static Block compressedStone;
-	public static Block	compressedGross;
+	public static Block compressedGross;
 	public static Block compressedYum;
-	
-	
+	public static Block compressedNether;
 
 	public static void init() {
 		creditsBlock = new CreditsBlock();
 		compressedCobble = new CompressedCobble();
-		compressedDirt =new CompressedDirt();
+		compressedDirt = new CompressedDirt();
 		compressedSand = new CompressedSand();
 		compressedGravel = new CompressedGravel();
 		compressedStone = new CompressedStone();
 		compressedGross = new CompressedGross();
 		compressedYum = new CompressedYum();
-		
-		
-		
-		
-		
+		compressedNether = new CompressedNetherrack();
+
 		compresser = new Compresser();
 	}
 

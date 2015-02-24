@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 
 public class ModItems {
 	public static Item testItem;
+	public static Item seedPacket;
 	public static CreativeTabs heheTweaks = (new CreativeTabs("HeheTweaks") {
         @Override
         @SideOnly(Side.CLIENT)
@@ -27,6 +28,7 @@ public class ModItems {
 	
 	public static void init(){
 		testItem = new TestItem();
+		seedPacket= new SeedPacket();
 		
 		
 	}
