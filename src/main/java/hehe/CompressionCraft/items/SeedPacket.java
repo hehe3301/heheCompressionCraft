@@ -12,7 +12,7 @@ import hehe.CompressionCraft.Constants;
 
 public class SeedPacket extends Item {
 
-	private final String name = "SeedPacket";
+	private final String name = "seedPacket";
 	private final static String[] subNames = { "Wheat", "Pumpkin", "Melon" };
 	private final int maxMeta = subNames.length;
 	public static IIcon[] textures = new IIcon[subNames.length];
@@ -24,11 +24,13 @@ public class SeedPacket extends Item {
 		setUnlocalizedName(Constants.MODID + "_" + name);
 		GameRegistry.registerItem(this, name);
 		setCreativeTab(ModItems.heheTweaks);
+		setTextureName(Constants.MODID+":"+name);
 	}
 
 	@Override
 	public String getUnlocalizedName(ItemStack par1ItemStack) {
-		return Constants.MODID +"." +name + "." + subNames[par1ItemStack.getItemDamage()];
+		return Constants.MODID + "_" + name + "."
+				+ subNames[par1ItemStack.getItemDamage()];
 	}
 
 	@Override
@@ -46,8 +48,7 @@ public class SeedPacket extends Item {
 	@Override
 	public void registerIcons(IIconRegister par1IconRegister) {
 		for (int i = 0; i < subNames.length; i++) {
-			textures[i] = par1IconRegister.registerIcon(Constants.MODID
-					+ subNames[i]);
+			textures[i] = par1IconRegister.registerIcon(Constants.MODID + ":" + name + i);
 		}
 	}
 
