@@ -1,6 +1,7 @@
 package hehe.CompressionCraft.recipes;
 
 import hehe.CompressionCraft.blocks.ModBlocks;
+import hehe.CompressionCraft.items.ModItems;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -121,8 +122,32 @@ public class ModRecipes {
 		for(int i=0; i<8; i++){ //adds smelting compressed cobble into compressed stone
 			GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedCobble,1, i ), new ItemStack(ModBlocks.compressedStone,1, i ), 0.1f);
 		}
-				
-	
+		
+		ItemStack wheatSeeds = new ItemStack(Items.wheat_seeds, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.seedPacket, 1, 0),wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds, wheatSeeds);
+		GameRegistry.addShapelessRecipe(wheatSeeds, new ItemStack(ModItems.seedPacket, 1, 0));
+		
+		ItemStack pumpkinSeeds = new ItemStack(Items.pumpkin_seeds, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.seedPacket, 1, 1),pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds, pumpkinSeeds);
+		GameRegistry.addShapelessRecipe(pumpkinSeeds, new ItemStack(ModItems.seedPacket, 1, 1));
+		
+		ItemStack melonSeeds = new ItemStack(Items.melon_seeds, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.seedPacket, 1, 2),melonSeeds, melonSeeds, melonSeeds, melonSeeds, melonSeeds, melonSeeds, melonSeeds, melonSeeds, melonSeeds);
+		GameRegistry.addShapelessRecipe(melonSeeds, new ItemStack(ModItems.seedPacket, 1, 2));
+		
+		ItemStack bread = new ItemStack(Items.bread, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedFood, 1, 0),bread, bread, bread, bread, bread, bread, bread, bread, bread);
+		GameRegistry.addShapelessRecipe(bread, new ItemStack(ModBlocks.compressedFood, 1, 0));
+		
+		ItemStack potato = new ItemStack(Items.baked_potato, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedFood, 1, 1),potato, potato, potato, potato, potato, potato, potato, potato, potato);
+		GameRegistry.addShapelessRecipe(potato, new ItemStack(ModBlocks.compressedFood, 1, 1));
+		
+		ItemStack cookies = new ItemStack(Items.cookie, 9, 0);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedFood, 1, 2),cookies, cookies, cookies, cookies, cookies, cookies, cookies, cookies, cookies);
+		GameRegistry.addShapelessRecipe(cookies, new ItemStack(ModBlocks.compressedFood, 1, 2));
+		
+		
 	}
 
 }

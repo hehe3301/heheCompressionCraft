@@ -15,7 +15,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CompressedFood extends Block {
 
 	private final String name = "compressedFood";
-	private final int maxMeta = 4;
+	private final int maxMeta = 3;
 	private IIcon[] icons;
 
 	public CompressedFood() {

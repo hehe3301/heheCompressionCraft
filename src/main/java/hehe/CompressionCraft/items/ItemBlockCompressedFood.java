@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockCompressedFood extends ItemBlock {
 
-	private final static String[] subNames = { "CompressedBread", "CompressedBakedPotatos", "CompressedCookies", "CompressedCakes"};
+	private final static String[] subNames = { "CompressedBread", "CompressedBakedPotatos", "CompressedCookies"};
 
 	public ItemBlockCompressedFood(Block block) {
 		super(block);
@@ -15,12 +15,12 @@ public class ItemBlockCompressedFood extends ItemBlock {
 
 	@Override
 	public String getUnlocalizedName(ItemStack itemStack) {
-		return getUnlocalizedName() + "." + subNames[itemStack.getItemDamage()];
+		return getUnlocalizedName() + "." + subNames[itemStack.getItemDamage()%subNames.length];
 	}
 
 	@Override
 	public int getMetadata(int meta) {
-		return meta;
+		return meta%subNames.length;
 	}
 
 }
