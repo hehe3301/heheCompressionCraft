@@ -147,7 +147,16 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedFood, 1, 2),cookies, cookies, cookies, cookies, cookies, cookies, cookies, cookies, cookies);
 		GameRegistry.addShapelessRecipe(cookies, new ItemStack(ModBlocks.compressedFood, 1, 2));
 		
-		
+		//hay bale to bread
+		GameRegistry.addSmelting(new ItemStack(Blocks.hay_block ), new ItemStack(ModBlocks.compressedFood,1, 0 ), 0.9f);
+		//Raw chicken -> chicken
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedGross, 1, 1), new ItemStack(ModBlocks.compressedYum, 1, 0), 0.9f);
+		//raw pork -> pork
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedGross, 1, 2), new ItemStack(ModBlocks.compressedYum, 1, 1), 0.9f);
+		//raw beef -> beef
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedGross, 1, 3), new ItemStack(ModBlocks.compressedYum, 1, 2), 0.9f);
+		//raw fish -> fish
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedGross, 1, 4), new ItemStack(ModBlocks.compressedYum, 1, 3), 0.9f);
 	}
 
 }
