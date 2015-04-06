@@ -4,9 +4,7 @@ import hehe.CompressionCraft.Constants;
 import hehe.CompressionCraft.items.ItemBlockCompressedStone;
 import hehe.CompressionCraft.items.ItemBlockCreditsBlock;
 import hehe.CompressionCraft.items.ModItems;
-
 import java.util.List;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,6 +13,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
 public class CompressedStone extends Block {
 
 	private final String name = "compressedStone";
@@ -33,25 +32,25 @@ public class CompressedStone extends Block {
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister) {
 		for (int i = 0; i < icons.length; i++) {
-			icons[i]=iconRegister.registerIcon(Constants.MODID + ":" + name + i);
+			icons[i] = iconRegister.registerIcon(Constants.MODID + ":" + name
+					+ i);
 		}
 	}
 
 	@Override
 	public IIcon getIcon(int side, int meta) {
-		return icons[meta%maxMeta];
+		return icons[meta % maxMeta];
 	}
+
 	@Override
-	public int damageDropped(int meta){
+	public int damageDropped(int meta) {
 		return meta;
 	}
-	
-	
-	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list){
-		for(int i = 0; i <maxMeta; i++){
+
+	public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list) {
+		for (int i = 0; i < maxMeta; i++) {
 			list.add(new ItemStack(item, 1, i));
 		}
 	}
-	
-	
+
 }

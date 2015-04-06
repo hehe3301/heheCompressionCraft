@@ -3,9 +3,7 @@ package hehe.CompressionCraft.blocks;
 import hehe.CompressionCraft.Constants;
 import hehe.CompressionCraft.items.ItemBlockCompressedSand;
 import hehe.CompressionCraft.items.ModItems;
-
 import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -14,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import cpw.mods.fml.common.registry.GameRegistry;
+
 public class CompressedSand extends Block {
 
 	private final String name = "compressedSand";

@@ -6,7 +6,8 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockCompressedYum extends ItemBlock {
 
-	private final static String[] subNames = { "CompressedChicken", "CompressedPig", "CompressedCow", "CompressedFish"};
+	private final static String[] subNames = { "CompressedChicken",
+			"CompressedPig", "CompressedCow", "CompressedFish" };
 
 	public ItemBlockCompressedYum(Block block) {
 		super(block);

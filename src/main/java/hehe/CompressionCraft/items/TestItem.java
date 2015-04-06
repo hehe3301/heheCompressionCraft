@@ -7,11 +7,11 @@ import hehe.CompressionCraft.Constants;
 
 public class TestItem extends Item {
 	private final String name = "testItem";
-	public TestItem(){
+
+	public TestItem() {
 		setUnlocalizedName(Constants.MODID + "_" + name);
 		GameRegistry.registerItem(this, name);
 		setCreativeTab(CreativeTabs.tabMaterials);
 	}
-	
-	
+
 }

@@ -10,9 +10,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class Compresser extends Block implements ITileEntityProvider {
-	
+
 	public static String name = "blockCompresser";
-	private String privName="blockCompresser";
+	private String privName = "blockCompresser";
 
 	protected Compresser() {
 		super(Material.rock);
@@ -29,7 +29,7 @@ public class Compresser extends Block implements ITileEntityProvider {
 	}
 
 	@Override
-	public boolean hasTileEntity(int meta){
+	public boolean hasTileEntity(int meta) {
 		return true;
 	}
 }

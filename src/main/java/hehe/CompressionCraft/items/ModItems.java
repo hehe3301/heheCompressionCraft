@@ -9,28 +9,27 @@ public class ModItems {
 	public static Item testItem;
 	public static Item seedPacket;
 	public static CreativeTabs heheTweaks = (new CreativeTabs("HeheTweaks") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public Item getTabIconItem() {
-            return testItem;
-        }
+		@Override
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return testItem;
+		}
 
-        @Override
-        public int getSearchbarWidth() {
-            return 100;
-        }
+		@Override
+		public int getSearchbarWidth() {
+			return 100;
+		}
 
-        @Override
-        public boolean hasSearchBar() {
-            return true;
-        }
-    });//.setBackgroundImageName("aikonia.png").setNoTitle();
-	
-	public static void init(){
+		@Override
+		public boolean hasSearchBar() {
+			return true;
+		}
+	});// .setBackgroundImageName("aikonia.png").setNoTitle();
+
+	public static void init() {
 		testItem = new TestItem();
-		seedPacket= new SeedPacket();
-		
-		
+		seedPacket = new SeedPacket();
+
 	}
 
 }

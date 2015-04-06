@@ -24,7 +24,7 @@ public class SeedPacket extends Item {
 		setUnlocalizedName(Constants.MODID + "_" + name);
 		GameRegistry.registerItem(this, name);
 		setCreativeTab(ModItems.heheTweaks);
-		setTextureName(Constants.MODID+":"+name);
+		setTextureName(Constants.MODID + ":" + name);
 	}
 
 	@Override
@@ -48,7 +48,8 @@ public class SeedPacket extends Item {
 	@Override
 	public void registerIcons(IIconRegister par1IconRegister) {
 		for (int i = 0; i < subNames.length; i++) {
-			textures[i] = par1IconRegister.registerIcon(Constants.MODID + ":" + name + i);
+			textures[i] = par1IconRegister.registerIcon(Constants.MODID + ":"
+					+ name + i);
 		}
 	}
 
