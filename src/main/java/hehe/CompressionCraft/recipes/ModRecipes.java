@@ -84,11 +84,13 @@ public class ModRecipes {
 			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedDirt, 1, i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1)));
 		}
 		
-		
+		//gravel compressing and de-compressing
 		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.gravel, 9), "gravelCompressedx1"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedGravel, 9,0),"gravelCompressedx2"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedGravel, 1, 0), "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedGravel, 1, 1), "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1"));
+		
+		
 		
 		//TODO: convert sand to oreDict
 		//All my Sand
@@ -100,6 +102,15 @@ public class ModRecipes {
 		//compressing x1 sand -> x2 sand
 		ItemStack compressedSand0 =  new ItemStack(ModBlocks.compressedSand, 1, 0);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 1, 1),compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0);
+		
+		
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.sand, 9), "sandCompressedx1"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedSand, 9,0),"sandCompressedx2"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedSand, 1, 0), "sand", "sand", "sand", "sand", "sand", "sand", "sand", "sand", "sand"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedSand, 1, 1), "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1", "sandCompressedx1"));
+		
+		
+		
 		
 		
 		//Rotten_Flesh
