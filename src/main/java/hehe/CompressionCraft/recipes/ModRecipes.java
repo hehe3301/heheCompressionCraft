@@ -6,27 +6,65 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class ModRecipes {
-
+	
 	public static void init() {
 		
-		for(int i=0; i<4; i++){
-			ItemStack chest = new ItemStack(Blocks.log, 1, i);
-			GameRegistry.addRecipe(new ItemStack(Blocks.chest, 4), "xxx", "x x", "xxx", 'x', chest);
+		//OreDict
+		for(int i = 0; i<8; i++){
+		OreDictionary.registerOre("cobbleCompressedx"+(i+1), new ItemStack(ModBlocks.compressedCobble, 1, i)) ;
+		OreDictionary.registerOre("stoneCompressedx"+(i+1), new ItemStack(ModBlocks.compressedStone, 1, i)) ;
+		OreDictionary.registerOre("netherrackCompressedx"+(i+1), new ItemStack(ModBlocks.compressedNetherrack, 1, i)) ;
 		}
+		OreDictionary.registerOre("netherrack", new ItemStack(Blocks.netherrack));
 		
+		
+		//Recipes
+		
+		//add a recipie for chests 4 at a time.
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.chest, 4),
+				"xxx",
+				"x x",
+				"xxx",
+				'x', "logWood"
+			));
 		//De-compressing cobble
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.cobblestone, 9), new ItemStack(ModBlocks.compressedCobble, 0));
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.cobblestone, 9), "cobbleCompressedx1"));
 		//compressing x0 cobble -> x1 cobble
-		ItemStack cobble =  new ItemStack(Blocks.cobblestone);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedCobble, 1, 0),cobble,cobble,cobble,cobble,cobble,cobble,cobble,cobble, cobble);
-		for(int i=0; i<=6; i++){
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedCobble, 9, i), new ItemStack(ModBlocks.compressedCobble, 1, i+1));
-			ItemStack compressedI =  new ItemStack(ModBlocks.compressedCobble, 1, i);
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedCobble, 1, i+1),compressedI, compressedI, compressedI, compressedI, compressedI, compressedI, compressedI, compressedI, compressedI);
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedCobble, 1, 0), "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone", "cobblestone"));
+		
+		//de-compressing Stone
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.stone, 9), "stoneCompressedx1"));
+		//compressing stone
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedStone, 1, 0), "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone", "stone"));
+		
+		//de-compressing netherrack
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.netherrack, 9), "netherrackCompressedx1"));
+		//compressing netherrack
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedNetherrack, 1, 0), "netherrack", "netherrack", "netherrack", "netherrack", "netherrack", "netherrack", "netherrack", "netherrack", "netherrack"));
+		
+		for(int i=0; i<7; i++){
+			//de-compresses cobblestone
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedCobble, 9, i),"cobbleCompressedx"+(i+2)));
+			//compresses cobblestone
+			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedCobble, 1, i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1), "cobbleCompressedx"+(i+1)));
+			//De-compressing Stone
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedStone, 9, i),"stoneCompressedx"+(i+2)));
+			//compressing stone
+			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedStone, 1, i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1), "stoneCompressedx"+(i+1)));
+			//de-compressing netherrack
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedNetherrack, 9, i),"netherrackCompressedx"+(i+2)));
+			//compressing netherrack
+			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedNetherrack, 1, i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1)));
 		}
 		
+		
+		
+		//TODO: convert dirt to oreDict
 		//Decompressing Dirt
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 9), new ItemStack(ModBlocks.compressedDirt, 0));
 		//compressing x0 dirt -> x1 dirt
@@ -38,6 +76,7 @@ public class ModRecipes {
 			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedDirt, 1, i+1),tmp, tmp, tmp, tmp, tmp, tmp, tmp, tmp, tmp);
 		}
 		
+		//TODO: convert gravel to oreDict
 		//All my Gravel		
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.gravel, 9), new ItemStack(ModBlocks.compressedGravel, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGravel, 9, 0), new ItemStack(ModBlocks.compressedGravel, 1, 1));
@@ -48,6 +87,7 @@ public class ModRecipes {
 		ItemStack compressedGravel0 =  new ItemStack(ModBlocks.compressedGravel, 1, 0);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGravel, 1, 1),compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0);
 				
+		//TODO: convert sand to oreDict
 		//All my Sand
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 9), new ItemStack(ModBlocks.compressedSand, 0));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 9, 0), new ItemStack(ModBlocks.compressedSand, 1, 1));
@@ -57,18 +97,8 @@ public class ModRecipes {
 		//compressing x1 sand -> x2 sand
 		ItemStack compressedSand0 =  new ItemStack(ModBlocks.compressedSand, 1, 0);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 1, 1),compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0);
-			
-		//De-compressing Stone
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.stone, 9), new ItemStack(ModBlocks.compressedStone, 0));
-		//compressing stone
-		ItemStack stone =  new ItemStack(Blocks.stone);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedStone, 1, 0),stone,stone,stone,stone,stone,stone,stone,stone, stone);
-		for(int i=0; i<8; i++){
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedStone, 9, i), new ItemStack(ModBlocks.compressedStone, 1, i+1));
-			ItemStack compressedStone0 =  new ItemStack(ModBlocks.compressedStone, 1, i);
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedStone, 1, i+1),compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0);
-			
-		}
+		
+		
 		//Rotten_Flesh
 		ItemStack zFlesh = new ItemStack(Items.rotten_flesh, 9);
 		GameRegistry.addShapelessRecipe(zFlesh, new ItemStack(ModBlocks.compressedGross, 9, 0));
@@ -107,18 +137,6 @@ public class ModRecipes {
 		GameRegistry.addShapelessRecipe(fish, new ItemStack(ModBlocks.compressedYum, 9, 3));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 3),fish,fish,fish,fish,fish,fish,fish,fish,fish);
 				
-		//De-compressing Stone
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.netherrack, 9), new ItemStack(ModBlocks.compressedNetherrack, 0));
-		//compressing stone
-		ItemStack netherrack =  new ItemStack(Blocks.netherrack);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedNetherrack, 1, 0),netherrack,netherrack,netherrack,netherrack,netherrack,netherrack,netherrack,netherrack, netherrack);
-		for(int i=0; i<8; i++){
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedNetherrack, 9, i), new ItemStack(ModBlocks.compressedNetherrack, 1, i+1));
-			ItemStack compressedStone0 =  new ItemStack(ModBlocks.compressedNetherrack, 1, i);
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedNetherrack, 1, i+1),compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0, compressedStone0);
-			
-		}
-		
 		for(int i=0; i<8; i++){ //adds smelting compressed cobble into compressed stone
 			GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedCobble,1, i ), new ItemStack(ModBlocks.compressedStone,1, i ), 0.1f);
 		}
