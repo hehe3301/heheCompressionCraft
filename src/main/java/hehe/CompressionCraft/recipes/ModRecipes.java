@@ -15,13 +15,21 @@ public class ModRecipes {
 	public static void init() {
 		
 		//OreDict
+		OreDictionary.registerOre("netherrack", new ItemStack(Blocks.netherrack));
+		OreDictionary.registerOre("dirt", new ItemStack(Blocks.dirt));
+		
 		for(int i = 0; i<8; i++){
 		OreDictionary.registerOre("cobbleCompressedx"+(i+1), new ItemStack(ModBlocks.compressedCobble, 1, i)) ;
 		OreDictionary.registerOre("stoneCompressedx"+(i+1), new ItemStack(ModBlocks.compressedStone, 1, i)) ;
 		OreDictionary.registerOre("netherrackCompressedx"+(i+1), new ItemStack(ModBlocks.compressedNetherrack, 1, i)) ;
 		}
-		OreDictionary.registerOre("netherrack", new ItemStack(Blocks.netherrack));
-		
+		for(int i = 0; i<4; i++){
+			OreDictionary.registerOre("dirtCompressedx"+(i+1), new ItemStack(ModBlocks.compressedDirt, 1, i)) ;
+		}
+		for(int i = 0; i<2; i++){
+			OreDictionary.registerOre("gravelCompressedx"+(i+1), new ItemStack(ModBlocks.compressedGravel, 1, i)) ;
+			OreDictionary.registerOre("sandCompressedx"+(i+1), new ItemStack(ModBlocks.compressedSand, 1, i)) ;
+		}
 		
 		//Recipes
 		
@@ -62,18 +70,16 @@ public class ModRecipes {
 			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedNetherrack, 1, i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1), "netherrackCompressedx"+(i+1)));
 		}
 		
-		
-		
-		//TODO: convert dirt to oreDict
-		//Decompressing Dirt
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.dirt, 9), new ItemStack(ModBlocks.compressedDirt, 0));
-		//compressing x0 dirt -> x1 dirt
-		ItemStack dirt =  new ItemStack(Blocks.dirt);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedDirt, 1, 0),dirt,dirt,dirt,dirt,dirt,dirt,dirt,dirt, dirt);
+		//de-compressing dirt
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.dirt, 9), "dirtCompressedx1"));
+		//compressing dirt
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedDirt, 1, 0), "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt", "dirt"));
+				
 		for(int i=0; i<3; i++){
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedDirt, 9, i), new ItemStack(ModBlocks.compressedDirt, 1, i+1));
-			ItemStack tmp = new ItemStack(ModBlocks.compressedDirt, 1, i);
-			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedDirt, 1, i+1),tmp, tmp, tmp, tmp, tmp, tmp, tmp, tmp, tmp);
+			//decompressing dirt
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedDirt, 9, i),"dirtCompressedx"+(i+2)));
+			//compressing dirt
+			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedDirt, 1, i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1)));
 		}
 		
 		//TODO: convert gravel to oreDict
