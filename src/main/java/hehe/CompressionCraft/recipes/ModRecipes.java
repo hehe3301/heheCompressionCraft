@@ -17,6 +17,8 @@ public class ModRecipes {
 		//OreDict
 		OreDictionary.registerOre("netherrack", new ItemStack(Blocks.netherrack));
 		OreDictionary.registerOre("dirt", new ItemStack(Blocks.dirt));
+		OreDictionary.registerOre("gravel", new ItemStack(Blocks.gravel));
+		
 		
 		for(int i = 0; i<8; i++){
 		OreDictionary.registerOre("cobbleCompressedx"+(i+1), new ItemStack(ModBlocks.compressedCobble, 1, i)) ;
@@ -82,17 +84,12 @@ public class ModRecipes {
 			GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedDirt, 1, i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1), "dirtCompressedx"+(i+1)));
 		}
 		
-		//TODO: convert gravel to oreDict
-		//All my Gravel		
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.gravel, 9), new ItemStack(ModBlocks.compressedGravel, 0));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGravel, 9, 0), new ItemStack(ModBlocks.compressedGravel, 1, 1));
-		//compressing x0 gravel -> x1 gravel
-		ItemStack gravel =  new ItemStack(Blocks.gravel);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGravel, 1, 0),gravel,gravel,gravel,gravel,gravel,gravel,gravel,gravel, gravel);
-		//compressing x1 gravel -> x2 gravel
-		ItemStack compressedGravel0 =  new ItemStack(ModBlocks.compressedGravel, 1, 0);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedGravel, 1, 1),compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0, compressedGravel0);
-				
+		
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.gravel, 9), "gravelCompressedx1"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedGravel, 9,0),"gravelCompressedx2"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedGravel, 1, 0), "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedGravel, 1, 1), "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1", "gravelCompressedx1"));
+		
 		//TODO: convert sand to oreDict
 		//All my Sand
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 9), new ItemStack(ModBlocks.compressedSand, 0));
