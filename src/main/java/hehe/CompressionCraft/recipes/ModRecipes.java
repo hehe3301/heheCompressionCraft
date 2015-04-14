@@ -92,18 +92,7 @@ public class ModRecipes {
 		
 		
 		
-		//TODO: convert sand to oreDict
-		//All my Sand
-		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.sand, 9), new ItemStack(ModBlocks.compressedSand, 0));
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 9, 0), new ItemStack(ModBlocks.compressedSand, 1, 1));
-		//compressing x0 sand -> x1 sand
-		ItemStack sand =  new ItemStack(Blocks.sand);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 1, 0),sand,sand,sand,sand,sand,sand,sand,sand, sand);
-		//compressing x1 sand -> x2 sand
-		ItemStack compressedSand0 =  new ItemStack(ModBlocks.compressedSand, 1, 0);
-		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedSand, 1, 1),compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0, compressedSand0);
-		
-		
+		//sand compressing and de-compressing	
 		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(Blocks.sand, 9), "sandCompressedx1"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.compressedSand, 9,0),"sandCompressedx2"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe( new ItemStack(ModBlocks.compressedSand, 1, 0), "sand", "sand", "sand", "sand", "sand", "sand", "sand", "sand", "sand"));
@@ -150,7 +139,8 @@ public class ModRecipes {
 		ItemStack fish = new ItemStack(Items.cooked_fished, 9);
 		GameRegistry.addShapelessRecipe(fish, new ItemStack(ModBlocks.compressedYum, 9, 3));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.compressedYum, 1, 3),fish,fish,fish,fish,fish,fish,fish,fish,fish);
-				
+		
+		
 		for(int i=0; i<8; i++){ //adds smelting compressed cobble into compressed stone
 			GameRegistry.addSmelting(new ItemStack(ModBlocks.compressedCobble,1, i ), new ItemStack(ModBlocks.compressedStone,1, i ), 0.1f);
 		}
