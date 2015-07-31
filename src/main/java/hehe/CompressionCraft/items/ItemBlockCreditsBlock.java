@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 public class ItemBlockCreditsBlock extends ItemBlock {
 
 	private final static String[] subNames = { "heheCredits", "orangeCredits",
-			"maxpowaCredits" };
+			"maxpowaCredits", "isaCredits" };
 
 	public ItemBlockCreditsBlock(Block block) {
 		super(block);

@@ -16,7 +16,7 @@ import net.minecraft.util.IIcon;
 public class CreditsBlock extends Block {
 
 	private final String name = "creditsBlock";
-	private final int maxMeta = 3;
+	private final int maxMeta = 4;
 	private IIcon[] icons;
 
 	public CreditsBlock() {
