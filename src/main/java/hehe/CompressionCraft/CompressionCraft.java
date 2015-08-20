@@ -1,5 +1,7 @@
 package hehe.CompressionCraft;
 
+import hehe.CompressionCraft.achievements.ModAchievements;
+import hehe.CompressionCraft.achievements.ModAchievementsList;
 import hehe.CompressionCraft.blocks.ModBlocks;
 import hehe.CompressionCraft.items.ModItems;
 import hehe.CompressionCraft.proxy.CommonProxy;
@@ -18,6 +20,8 @@ public class CompressionCraft {
 	public void preInit(FMLPreInitializationEvent event) {
 		ModBlocks.init();
 		ModItems.init();
+		ModAchievements.init();
+		ModAchievementsList.init();
 	}
 
 	@Mod.EventHandler

@@ -14,6 +14,8 @@ public class ModBlocks {
 	public static Block compressedYum;
 	public static Block compressedNetherrack;
 	public static Block compressedFood;
+	
+	
 
 	public static void init() {
 		creditsBlock = new CreditsBlock();
@@ -26,8 +28,9 @@ public class ModBlocks {
 		compressedYum = new CompressedYum();
 		compressedNetherrack = new CompressedNetherrack();
 		compressedFood = new CompressedFood();
-
+		
 		compresser = new Compresser();
+
 	}
 
 }
