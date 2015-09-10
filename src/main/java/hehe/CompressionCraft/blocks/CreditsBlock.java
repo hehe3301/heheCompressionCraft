@@ -25,7 +25,6 @@ public class CreditsBlock extends Block {
 		setBlockName(Constants.MODID + "_" + name);
 		setCreativeTab(ModItems.heheTweaks);
 		icons = new IIcon[maxMeta];
-
 		GameRegistry.registerBlock(this, ItemBlockCreditsBlock.class, name);
 	}
 
@@ -42,6 +41,7 @@ public class CreditsBlock extends Block {
 		return icons[meta % maxMeta];
 	}
 
+	@Override
 	public int damageDropped(int meta) {
 		return meta;
 	}
